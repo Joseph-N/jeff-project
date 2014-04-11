@@ -36,6 +36,9 @@ group :production do
 	gem 'rails_12factor'
 end
 
+gem 'rails_admin', '~> 0.6.2'
+gem 'acts-as-taggable-on'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

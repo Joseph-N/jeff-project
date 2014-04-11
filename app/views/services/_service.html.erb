@@ -1,0 +1,21 @@
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= service.id %>">
+          <%= service.name %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse<%= service.id %>" class="panel-collapse collapse <%= first_service?(service) ? "in" : "" %>">
+      <div class="panel-body">
+        <% if service.sections.any? %>
+          <% @sections = service.sections %>
+           <ol>
+              <%= render @sections %>  
+            </ol>
+        <% else %>    
+          <p><%= service.description %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
