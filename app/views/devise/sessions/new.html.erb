@@ -1,0 +1,38 @@
+<section id="contact" class="section section-center section-contact">
+  <div class="container">
+    <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+    <% end %>
+        <% if alert%>
+    <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+    <h2 class="section-title"><span>Sign In</span></h2>
+    <div class="main-action">
+     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div class="row">
+          <div class="col-sm-4 col-md-offset-4">
+            <div class="form-group">
+              <%= f.label :email, class: "sr-only" %>
+              <%= f.email_field :email, class: "form-control", placeholder: "Subject", :autofocus => true  %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password , class: "sr-only" %>
+              <%= f.password_field :password , class: "form-control", placeholder: "Name" %>
+            </div>
+            <div class="form-group text-left">
+                <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+            </div>
+            <div class="form-group text-left">
+            <%= f.submit "Sign in", class: "btn btn-default btn-block" %>
+        </div>
+          </div>
+        </div>
+        <%= render "devise/shared/links" %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+

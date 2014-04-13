@@ -38,6 +38,8 @@ end
 
 gem 'rails_admin', '~> 0.6.2'
 gem 'acts-as-taggable-on'
+gem 'devise'
+gem "letter_opener", :group => :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

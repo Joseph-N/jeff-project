@@ -1,0 +1,24 @@
+<section id="contact" class="section section-center section-contact">
+  <div class="container">
+    <h2 class="section-title"><span>Forgot your password?</span></h2>
+    <div class="main-action">
+     <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+        <div class="row">
+          <div class="col-sm-4 col-md-offset-4">
+            <div class="form-group">
+              <%= f.label :email, class: "sr-only" %>
+              <%= f.email_field :email, class: "form-control", placeholder: "Enter Email", :autofocus => true  %>
+            </div>
+            <div class="form-group text-left">
+            	<%= f.submit "Send me reset password instructions", class: "btn btn-default btn-block" %>
+        </div>
+          </div>
+        </div>
+        <%= render "devise/shared/links" %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+

@@ -6,6 +6,7 @@ class EmailsController < ApplicationController
 	def create
 		@email = Email.create(email_params)
 		if @email.save
+			ContactMailer.send_email(@email.id).deliver!
 			redirect_to root_path, notice: "Thanks for contacting us"
 		else
 			render 'new'
